@@ -1,0 +1,29 @@
+Para executar com o grof:
+
+ primeiro modifica o Makefile dentro da pasta src do programa.
+
+ Ex.: Colocando o -pg
+
+Makefile: volrend
+CFLAGS := $(CFLAGS) -Wall -pg -W -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wdisabled-optimization
+CFLAGS := $(CFLAGS) -Wpadded -Winline -Wpointer-arith -Wsign-compare -Wendif-labels
+LDFLAGS := $(LDFLAGS) -lm 
+
+Após alteração caso já tenha feito o build antes disso:
+ 
+parsecmgmt -a uninstall -p splash2x.volrend  // fazer a desinstalação
+
+Caso não tenha feito a buiuld ainda:
+
+parsecmgmt -a build -p splash2x.volrend
+
+Depois executar normalmente: 
+
+arsecmgmt -a run -p splash2x.volrend -i 'native'
+
+O arquivo será gerado dentro da pasta /run dentro do projeto.
+
+Pasta projeto: /parsec-3.0/ext/splash2x/apps/volrend/
+
+
+
